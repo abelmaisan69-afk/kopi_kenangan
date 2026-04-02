@@ -86,8 +86,383 @@ body{
     display: none;
 }
 
+/* HERO SECTION */
+.hero{
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     background-image: url('../image/wallpaper2.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-color: #000;
+     justify-content: flex-start;
+     padding-left: 7%;
+     position: relative;
+     
+}
+
+.hero .hero-content{
+    max-width: 600px;
+    text-align: left;
+    color: #fff;
+}
+
+.hero .hero-content h1{
+    font-size: 5rem;
+    
+}
+
+.hero .hero-content h1 span{
+    color: var(--primary);
+}
+
+.hero .hero-content p{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+} 
+
+.hero .hero-content a{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius:5px ;
+    text-decoration: none;
+}
+
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 40%;
+    bottom: 0;
+     background: linear-gradient(
+        0deg,
+        rgba(1,1,1,1) 8%,
+        rgba(255,255,255,0) 60%
+    );
+
+    pointer-events: none;
+}
+
+/* BAGIAN TENTANG KAMI */
+.about{
+    padding: 5rem 7%;
+    background-color: var(--bg);
+    color: #fff;
+}
+
+.about .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about h2{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.about p{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.container span{
+    color: var(--primary);
+}
+
+/* BAGiAN MENU KAMI                      yang diubah*/          
+.menu{
+    padding: 5rem 7%;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.menu p{
+    margin-bottom: 3rem;
+}
+
+.container span{
+    color: var(--primary);
+}
+
+.menu-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.menu-card{
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menu-card:hover{
+    transform: translateY(-5px);
+}
+
+.menu-card img{
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+.menu-card h3{
+    margin-bottom: 0.5rem;
+}
+
+.menu-card p{
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.menu-card a{
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+}
+
+/* HALAMAN KONTAK */
+.contact{
+    padding: 5rem 7%;
+    text-align: center;
+}
+
+.contact-row{
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-row .map{
+    flex: 1 1 40rem;
+}
+
+.contact-row form{
+    flex: 1 1 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-row input,
+.contact-row textarea{
+    padding: 1rem;
+    background: #111;
+    color: white;
+    border-radius: 5px;
+}
+
+.contact-row button{
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* media querys */
+
+
 /* laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
 /* tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 62.5%;
+    }
+
+   .navbar .navbar-nav a{
+        display: block;
+        width: 100%;
+    }
+
+    .navbar .navbar-nav a::after{
+        content: '';
+        display: block;
+        border-bottom: 2px solid var(--primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s;
+        width: 50%;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(1);
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav  {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 50vh;
+        transition: right 0.3s ease;
+    }
+
+    .navbar .navbar-nav a{
+        display: block;
+        margin: 1.5rem;
+        font-size:2rem;
+        color: black;
+    }
+
+    .navbar .navbar-nav.active  {
+        right: 0;
+    }
+
+    /* hero section */
+     .hero{
+        min-height: 80vh;
+        padding: 0 5%;
+     }
+
+     .hero .hero-content h1 {
+        font-size: 4rem;
+     }
+
+     .hero .hero-content p{
+        font-size: 1.4rem;
+     }
+
+     .hero .hero-content .a{
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+
+     }
+
+     /* ABOUT SECTION */
+     .about {
+        padding: 4rem 5%;
+     }
+
+     .about h2{
+        font-size: 2.5rem;
+     }
+     .about p{
+        font-size: 1.3rem;
+     }
+     /* bagian menu        yang diubah */
+     .menu-row{
+        grid-template-columns: repeat(2,1fr);
+     }
+        
+     
+
+
+
+
+}
+
+
 /* handphone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
+    .navbar .navbar-nav a{
+        display: block;
+        width: 100%;
+    }
+
+    .navbar .navbar-nav a::after{
+        content: '';
+        display: block;
+        border-bottom: 2px solid var(--primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s;
+        width: 50%;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(1);
+    }
+
+    #hamburger-menu{
+    display: inline-block;
+}
+
+.navbar .navbar-nav{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 50vh;
+    transition: right 0.3s ease;
+}
+
+.navbar .navbar-nav a{
+    display: block;
+    margin: 1.5rem;
+    font-size: 2rem;
+    color: black;
+}
+
+/* bagian hero section */
+.hero{
+    min-height: 70vh;
+    padding: 0 3%;
+}
+
+.hero .hero-content h1{
+    font-size: 3rem;
+}
+
+.hero .hero-content p{
+    font-size: 1.2rem;
+}
+
+.hero .hero-content .a{
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+}
+/* ABOUT SECTION */
+.about{
+    padding: 3rem 5%;
+}
+
+.about h2{
+    font-size: 1.3rem;
+}
+.about p{
+    font-size: 1.1rem;
+}
+/* bagian menu             yangdiubah */
+.menu-row{
+    grid-template-columns: repeat(1fr);
+}
+
+}
+
+
+
+
+
+
+
 
